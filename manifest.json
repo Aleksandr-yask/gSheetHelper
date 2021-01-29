@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "gSheet Helper",
+
+  "description": "gSheetHelper",
+  "version": "1.0.0",
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/search16.png",
+      "24": "icons/search24.png",
+      "32": "icons/search32.png"
+    },
+    "default_title": "Search translator"
+  },
+  "permissions": [
+    "*://*.docs.google.com/spreadsheets/*",
+    "activeTab"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.docs.google.com/spreadsheets/*"],
+      "js": ["script/background.js"],
+      "css": ["css/search.css"],
+      "run_at": "document_start"
+    }
+  ],
+
+
+  "icons": {
+    "16": "icons/search16.png",
+    "48": "icons/search64.png",
+    "128": "icons/search128.png"
+  }
+}

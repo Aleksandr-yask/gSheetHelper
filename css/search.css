@@ -1,0 +1,28 @@
+.search-sheet-input {
+    position: relative;
+}
+.searchDownBtn {
+    background-image: none;
+    width: auto;
+}
+.sheetSearchItem:hover {
+    background-color: #f6f6f6;
+}
+#srchBoxDiv {
+    position: absolute;
+    left: 50px;
+    bottom: 60px;
+    min-width: 280px;
+}
+#srchBtn {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#btnSearchSvg {
+    user-select: none;
+    fill: #585858;
+    width: 18px;
+}
+.docs-sheet-add, .docs-sheet-all {
+    vertical-align: middle;
+}
