@@ -4,7 +4,7 @@
 <h3>This extension adding search for google docs sheets</h3>
 
 <h3>Usage</h3>
-1. Install <br>
+1. Install https://chrome.google.com/webstore/detail/gsheet-helper/jkedikdbdoppjkfaceohjadpdcnanfid<br>
 2. Reload google sheet page <br>
 3. Click search button <br>
 4. Enjoy <br>
