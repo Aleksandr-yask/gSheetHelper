@@ -77,7 +77,7 @@ function openSearchMenu() {
         </div>
         `;
             currentMenu.push({
-                "name": cutAllTypes(sheet.querySelector('.docs-sheet-tab-name').innerText.toLocaleLowerCase()),
+                "name": sheet.querySelector('.docs-sheet-tab-name').innerText.toLocaleLowerCase(),
                 "id": "search_item_" + sheet.id
             })
         }
@@ -118,7 +118,8 @@ function openSearchMenu() {
             const value = this.value.trim().toLocaleLowerCase();
             if (value !== '') {
                 currentMenu.forEach((item) => {
-                    if (item.name.search(value) === -1) {
+                    const foundPos = item.name.search(value);
+                    if (foundPos === -1) {
                         document.getElementById(item.id).style.display = 'none';
                     } else {
                         document.getElementById(item.id).style.display = 'block';
@@ -135,19 +136,11 @@ function openSearchMenu() {
         items.forEach(function (item) {
             item.addEventListener('click', function () {
                 triggerMouseEvent(document.getElementById(item.dataset.id), "mousedown");
+                triggerMouseEvent(document.getElementById(item.dataset.id), "mouseup");
                 closeSearchMenu();
             })
         })
     }, 0)
-}
-
-function cutAllTypes(string) {
-    const replace = ['::object', '::constant', '::balance_all'];
-    let newString = string;
-    replace.forEach(i => {
-        newString = newString.replace(i, '')
-    })
-    return newString;
 }
 
 function triggerMouseEvent(node, eventType) {
@@ -174,7 +167,6 @@ document.addEventListener('keyup', (event) => {
         closeSearchMenu();
     }
     if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-        console.log(dblClickShift)
         if (dblClickShift === 1) {
             if (!specifiedElement) {
                 openSearchMenu();
