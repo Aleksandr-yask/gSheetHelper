@@ -10,7 +10,7 @@
       "24": "icons/search24.png",
       "32": "icons/search32.png"
     },
-    "default_title": "Search translator"
+    "default_title": "Google Sheet search"
   },
   "permissions": [
     "*://*.docs.google.com/spreadsheets/*"
