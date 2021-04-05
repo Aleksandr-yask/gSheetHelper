@@ -15,8 +15,7 @@
     "default_title": "Search translator"
   },
   "permissions": [
-    "*://*.docs.google.com/spreadsheets/*",
-    "activeTab"
+    "*://*.docs.google.com/spreadsheets/*"
   ],
 
   "content_scripts": [
